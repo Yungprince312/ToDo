@@ -1,0 +1,76 @@
+<head>
+  <title>ToDo List</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      {{> loginButtons}}
+      <h1>ToDo List</h1>
+      {{>mainbody}}
+      {{> task}}
+    </header>
+  </div>
+</body>
+
+<template name="mainbody"> 
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>Get Started</h4>
+          {{>add}}
+        </div>      
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-sm-8 col-md-7 py-4">
+
+
+      </div>
+    </div>
+  </header>
+</template>
+ 
+<template name="task">
+  {{#each MainAll}}
+  <div class="row" id="{{_id}}">
+    <div class="col-auto">
+      <p>{{Task}}</p>
+    </div>
+
+    <div class="col">
+      <small>
+        postedby:<a href="" id="{{userId}}" class="js-showUser"><h5>{{usersName}}</h5>
+        </a>
+      </small>
+    </div>
+    
+    {{#if currentUser}}
+      <div class="col">
+        <button type="button" class="btn btn-danger js-delete">Delete</button> 
+        <button type="button" class="btn btn-light js-edit">Edit</button>
+      </div>
+      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1 js-check">
+    {{/if}}
+  </div>  
+  {{/each}}
+</template>
+
+<template name= "add">
+  <div class= "row">
+    <form class="new-task">
+  <input type= "text" id= "taskpath" class= "js-add" name= "text" placeholder= "Type to add new ToDo">
+    </form> 
+  </div>
+</template>
+
+<template name= "delete">
+   <div class="row">
+      <div class="col">
+          <button type="button" class="btn btn-danger js-delete">Delete</button>
+      </div>
+    </div> 
+</template>
+

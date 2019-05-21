@@ -1,0 +1,1 @@
+tasksDB = new Mongo.Collection('tasks');
