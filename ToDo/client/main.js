@@ -84,7 +84,21 @@ Template.task.events({
 	},
 
 	'click .js-edit'(event, instance) {
-
+		var taskID = this._id;
+		$("#" + taskID).fadeOut("slow","swing", function(){
+		console.log ("hi");
+		tasksDB.remove({_id:taskID});
+		});
 	},
 
+});
+
+Template.editTodo.events({
+	'click .js-edit'(event, instance) {
+		var taskID = this._id;
+		$("#" + taskID).fadeOut("slow","swing", function(){
+		console.log ("hi");
+		tasksDB.remove({_id:taskID});
+		});
+	},
 });

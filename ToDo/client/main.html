@@ -66,11 +66,41 @@
   </div>
 </template>
 
-<template name= "delete">
-   <div class="row">
-      <div class="col">
-          <button type="button" class="btn btn-danger js-delete">Delete</button>
-      </div>
-    </div> 
-</template>
 
+
+<template name="editTodo">
+  <div class="modal fade" id="editTodo" tabindex="-1" role="dialog" aria-labelledby="editTodoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editTodoTitle">Edit task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+         </div>
+          <div class="input-group md-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Type new task</span>
+            </div>
+             <input type="text" class="form-control" placeholder="...." aria-label="New Task" aria-describedby="basci-addon1">
+            </div>
+              <div class="col-auto">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" value="" id="private">
+                  <label class="custom-control-label" for="private">Private</label>
+                </div>
+              </div>     
+            <div class="col-auto">
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" value="" id="public">
+                <label class="custom-control-label" for="public">Public</label>
+              </div>
+            </div>       
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary js-editSave">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>        
